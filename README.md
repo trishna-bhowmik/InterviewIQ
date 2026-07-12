@@ -10,15 +10,16 @@ InterviewIQ is a full-stack AI-powered mock interview platform that helps candid
 
 ## ✨ Features
 
-- 🔐 JWT Authentication with Refresh Tokens
-- 📄 Resume Upload & PDF Parsing
+- 🔐 Secure JWT Authentication with Refresh Tokens
+- 📄 Resume Upload & PDF Text Extraction
 - 🤖 AI Resume Analysis
-- 💬 AI Interview Question Generation
-- 🎯 Personalized Mock Interviews
+- 💬 AI-Generated Personalized Interview Questions
+- 🎙️ Voice Answer Support (Speech-to-Text)
+- 📝 Text & Voice Interview Responses
 - 📊 AI Answer Evaluation & Scoring
-- 📈 Dashboard Analytics
 - 📚 Interview History
-- 👤 User Profile
+- 👤 User Profile & Performance Statistics
+- ⚡ Automatic Session Refresh
 - 📱 Responsive Modern UI
 
 ---
@@ -215,14 +216,15 @@ OPENAI_API_KEY=
 
 ## 🚀 Future Improvements
 
-- 🎥 Video Interviews
-- 💻 Coding Interview Editor
-- 🧠 Adaptive AI Questioning
-- 📈 Advanced Analytics Dashboard
+- 🎥 AI Video Interview Support
+- 💻 Live Coding Interview Environment
+- 🧠 Adaptive Follow-up Questions
+- 📈 Advanced Performance Analytics
 - 🌙 Dark Mode
 - 📱 Mobile Application
 - 🌍 Multi-language Support
-- 🏆 Gamification & Achievements
+- 🏆 Achievement & Leaderboard System
+- 🏢 Company-Specific Interview Tracks
 
 ---
 
