@@ -28,7 +28,7 @@ const envSchema = z.object({
 
   CLOUDINARY_API_SECRET: z.string(),
 
-  FFRONTEND_URL: z.string().optional(),
+  FRONTEND_URL: z.string().optional(),
 });
 
 export const env = envSchema.parse(
