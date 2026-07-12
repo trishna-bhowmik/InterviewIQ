@@ -93,7 +93,8 @@ model Interview {
   user   User   @relation(fields: [userId], references: [id])
 
   resumeId String
-  resume   Resume @relation(fields: [resumeId], references: [id])
+
+  resume Resume @relation(fields: [resumeId], references: [id], onDelete: Cascade)
 
   title String
 
