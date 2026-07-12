@@ -1,27 +1,69 @@
 # 🚀 InterviewIQ
 
-> **AI-Powered Mock Interview Platform**
+> **AI-Powered Interview Preparation & Evaluation Platform**
 
-Practice smarter. Interview confidently.
+InterviewIQ is a full-stack AI-powered mock interview platform that helps candidates prepare for technical and HR interviews through intelligent resume analysis, AI-generated interview questions, voice-enabled conversations, and automated performance evaluation.
 
-InterviewIQ is a full-stack AI-powered mock interview platform that helps candidates prepare for technical and HR interviews by analyzing resumes, generating personalized interview questions, evaluating answers, and providing intelligent feedback.
+The platform combines modern web technologies with Generative AI to simulate realistic interview experiences and provide actionable feedback for continuous improvement.
 
 ---
 
 ## ✨ Features
 
-- 🔐 Secure JWT Authentication with Refresh Tokens
-- 📄 Resume Upload & PDF Text Extraction
-- 🤖 AI Resume Analysis
-- 💬 AI-Generated Personalized Interview Questions
-- 🎙️ Voice Answer Support (Speech-to-Text)
-- 📝 Text & Voice Interview Responses
-- 📊 AI Answer Evaluation & Scoring
-- 📚 Interview History
-- 👤 User Profile & Performance Statistics
-- ⚡ Automatic Session Refresh
-- 📱 Responsive Modern UI
+### 🔐 Authentication
+- User Registration & Login
+- JWT Authentication (Access + Refresh Tokens)
+- Automatic Session Refresh
+- Protected Routes
+- Secure Password Hashing
 
+### 📄 Resume Management
+- Upload PDF Resume
+- Resume Text Extraction
+- Resume Management (View & Delete)
+- AI Resume Analysis
+
+### 🤖 AI Interview Engine
+- AI-Generated Personalized Interview Questions
+- Multiple Interview Types (HR, Technical, DSA, Behavioral, System Design)
+- Multiple Difficulty Levels (Easy, Medium, Hard)
+- Configurable Interview Duration
+
+### 🎙️ Voice AI
+- AI Text-to-Speech (Questions are spoken aloud)
+- Speech-to-Text (Voice Answer Input)
+- Manual Text Answer Support
+
+### 📊 AI Evaluation
+- AI Answer Evaluation
+- Interview Scoring
+- Personalized Feedback
+- Performance Insights
+
+### 📈 Dashboard
+- Interview Statistics
+- Resume Overview
+- Performance Metrics
+- Recent Activity
+
+### 📚 Interview History
+- Search Interviews
+- Filter by Status
+- Sort by Date
+- Delete Interviews
+
+### 👤 User Profile
+- Profile Information
+- Interview Statistics
+- Latest Resume
+- Average Performance Score
+
+### 🎨 User Experience
+- Responsive UI
+- Modern Dashboard
+- Toast Notifications
+- Loading States
+- Smooth Navigation
 ---
 
 ## 🖥️ Tech Stack
@@ -55,9 +97,6 @@ InterviewIQ is a full-stack AI-powered mock interview platform that helps candid
 - Turborepo
 - pnpm
 - GitHub
-- Railway *(Deployment)*
-- Vercel *(Deployment)*
-- Neon PostgreSQL
 
 ---
 
