@@ -1,134 +1,155 @@
+<div align="center">
+
 # 🚀 InterviewIQ
 
-> **AI-Powered Interview Preparation & Evaluation Platform**
+### AI-Powered Interview Preparation & Evaluation Platform
 
-InterviewIQ is a full-stack AI-powered mock interview platform that helps candidates prepare for technical and HR interviews through intelligent resume analysis, AI-generated interview questions, voice-enabled conversations, and automated performance evaluation.
+Practice smarter. Interview confidently.
 
-The platform combines modern web technologies with Generative AI to simulate realistic interview experiences and provide actionable feedback for continuous improvement.
+<p align="center">
+
+<img src="https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=nextdotjs">
+<img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black">
+<img src="https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
+<img src="https://img.shields.io/badge/Express.js-5-black?style=for-the-badge&logo=express">
+<img src="https://img.shields.io/badge/PostgreSQL-16-4169E1?style=for-the-badge&logo=postgresql&logoColor=white">
+<img src="https://img.shields.io/badge/Prisma-ORM-2D3748?style=for-the-badge&logo=prisma">
+<img src="https://img.shields.io/badge/TailwindCSS-4-06B6D4?style=for-the-badge&logo=tailwindcss">
+<img src="https://img.shields.io/badge/JWT-Authentication-000000?style=for-the-badge">
+
+</p>
 
 ---
 
-## ✨ Features
+An AI-powered interview preparation platform that analyzes resumes, generates personalized interview questions, conducts voice-enabled mock interviews, evaluates responses using Generative AI, and provides actionable performance feedback.
 
-### 🔐 Authentication
+</div>
+
+---
+
+# ✨ Features
+
+## 🔐 Authentication
+
 - User Registration & Login
-- JWT Authentication (Access + Refresh Tokens)
+- JWT Authentication
+- Refresh Token Authentication
 - Automatic Session Refresh
 - Protected Routes
 - Secure Password Hashing
 
-### 📄 Resume Management
+---
+
+## 📄 Resume Management
+
 - Upload PDF Resume
 - Resume Text Extraction
-- Resume Management (View & Delete)
 - AI Resume Analysis
+- Resume Management
+- Delete Resume
 
-### 🤖 AI Interview Engine
-- AI-Generated Personalized Interview Questions
-- Multiple Interview Types (HR, Technical, DSA, Behavioral, System Design)
-- Multiple Difficulty Levels (Easy, Medium, Hard)
+---
+
+## 🤖 AI Interview Engine
+
+- Personalized Interview Generation
+- AI Resume Understanding
+- Technical Interviews
+- HR Interviews
+- DSA Interviews
+- Behavioral Interviews
+- System Design Interviews
+- Multiple Difficulty Levels
 - Configurable Interview Duration
 
-### 🎙️ Voice AI
-- AI Text-to-Speech (Questions are spoken aloud)
-- Speech-to-Text (Voice Answer Input)
+---
+
+## 🎙️ Voice AI
+
+- AI Text-to-Speech
+- Speech-to-Text Answer Input
 - Manual Text Answer Support
 
-### 📊 AI Evaluation
+---
+
+## 📊 AI Evaluation
+
 - AI Answer Evaluation
 - Interview Scoring
 - Personalized Feedback
 - Performance Insights
 
-### 📈 Dashboard
-- Interview Statistics
-- Resume Overview
-- Performance Metrics
-- Recent Activity
+---
 
-### 📚 Interview History
+## 📈 Dashboard
+
+- Performance Statistics
+- Interview Analytics
+- Resume Overview
+- Recent Interviews
+
+---
+
+## 📚 Interview History
+
 - Search Interviews
-- Filter by Status
-- Sort by Date
+- Filter Interviews
+- Sort Interviews
 - Delete Interviews
 
-### 👤 User Profile
-- Profile Information
+---
+
+## 👤 User Profile
+
+- User Information
 - Interview Statistics
 - Latest Resume
 - Average Performance Score
 
-### 🎨 User Experience
-- Responsive UI
-- Modern Dashboard
+---
+
+## 🎨 Modern UI
+
+- Responsive Design
+- Professional Dashboard
 - Toast Notifications
-- Loading States
 - Smooth Navigation
----
-
-## 🖥️ Tech Stack
-
-### Frontend
-
-- Next.js
-- React
-- TypeScript
-- Tailwind CSS
-- React Query
-- Axios
-
-### Backend
-
-- Node.js
-- Express.js
-- Prisma ORM
-- PostgreSQL
-- JWT Authentication
-
-### AI
-
-- OpenAI / Gemini API
-- Resume Analysis
-- Interview Question Generation
-- AI Feedback Generation
-
-### DevOps
-
-- Turborepo
-- pnpm
-- GitHub
+- Modern Components
 
 ---
 
-## 🏗️ System Architecture
+# 🏗️ System Architecture
 
-```
-                 ┌───────────────────────┐
-                 │      Next.js UI       │
-                 └──────────┬────────────┘
-                            │
-                            │ HTTPS
-                            ▼
-                 ┌───────────────────────┐
-                 │   Express Gateway     │
-                 └──────────┬────────────┘
-                            │
-        ┌───────────────────┼───────────────────┐
-        ▼                   ▼                   ▼
- PostgreSQL            AI Service          Resume Parser
-   Prisma         (OpenAI / Gemini)           PDF
+```text
+                        ┌────────────────────────────┐
+                        │        Next.js App         │
+                        │       (Frontend UI)        │
+                        └─────────────┬──────────────┘
+                                      │
+                                      │ HTTPS
+                                      ▼
+                     ┌─────────────────────────────────┐
+                     │        Express Gateway          │
+                     │     REST API + Authentication   │
+                     └───────┬───────────┬─────────────┘
+                             │           │
+                             │           │
+                 ┌───────────▼───┐   ┌───▼────────────┐
+                 │ PostgreSQL     │   │  AI Service    │
+                 │ Prisma ORM     │   │ OpenAI/Gemini  │
+                 └───────────────┘   └────────────────┘
 ```
 
 ---
 
-## 🔄 Application Workflow
+# 🔄 Application Workflow
 
-```
+```text
 User
 
 ↓
 
-Login
+Register / Login
 
 ↓
 
@@ -136,7 +157,7 @@ Upload Resume
 
 ↓
 
-Extract Resume Text
+PDF Text Extraction
 
 ↓
 
@@ -152,7 +173,7 @@ Start Interview
 
 ↓
 
-Submit Answers
+🎙 Voice / ⌨ Text Answers
 
 ↓
 
@@ -165,22 +186,51 @@ Score + Feedback
 ↓
 
 Interview History
+
+↓
+
+Performance Dashboard
 ```
 
 ---
 
-## 📂 Folder Structure
+# 🛠 Tech Stack
+
+| Category | Technologies |
+|----------|--------------|
+| Frontend | Next.js, React, TypeScript |
+| Styling | Tailwind CSS |
+| Backend | Node.js, Express.js |
+| Database | PostgreSQL |
+| ORM | Prisma |
+| Authentication | JWT, Refresh Tokens, bcrypt |
+| AI | OpenAI / Gemini |
+| State Management | React Query |
+| HTTP Client | Axios |
+| Monorepo | Turborepo + pnpm |
+
+---
+
+# 📂 Folder Structure
 
 ```text
 InterviewIQ
 │
 ├── apps
-│   ├── gateway          # Backend API
-│   ├── web              # Next.js Frontend
+│   ├── gateway
+│   │   ├── src
+│   │   └── prisma
+│   │
+│   └── web
+│       ├── app
+│       ├── components
+│       ├── hooks
+│       ├── services
+│       └── types
 │
-├── docs                 # Documentation
+├── docs
 │
-├── infrastructure       # Deployment configs
+├── infrastructure
 │
 ├── package.json
 ├── pnpm-workspace.yaml
@@ -189,7 +239,7 @@ InterviewIQ
 
 ---
 
-## ⚙️ Installation
+# ⚙️ Installation
 
 Clone the repository
 
@@ -215,7 +265,7 @@ Create environment variables
 cp .env.example .env
 ```
 
-Run the project
+Run the application
 
 ```bash
 pnpm dev
@@ -235,7 +285,7 @@ http://localhost:4000
 
 ---
 
-## 🔑 Environment Variables
+# 🔑 Environment Variables
 
 ```env
 DATABASE_URL=
@@ -253,27 +303,46 @@ OPENAI_API_KEY=
 
 ---
 
-## 🚀 Future Improvements
+# 🚀 Future Improvements
 
-- 🎥 AI Video Interview Support
-- 💻 Live Coding Interview Environment
+- 🎥 Video Interviews
+- 💻 Live Coding Interviews
 - 🧠 Adaptive Follow-up Questions
-- 📈 Advanced Performance Analytics
+- 📈 Advanced Analytics
 - 🌙 Dark Mode
-- 📱 Mobile Application
 - 🌍 Multi-language Support
-- 🏆 Achievement & Leaderboard System
-- 🏢 Company-Specific Interview Tracks
+- 🏆 Achievements & Badges
+- 📱 Mobile Application
 
 ---
 
-## 👩‍💻 Author
+# 📚 Documentation
+
+Detailed documentation is available in the **docs/** directory.
+
+- Architecture
+- Backend
+- Frontend
+- Database
+- Authentication
+- AI Module
+- Deployment
+- API Reference
+
+---
+
+# 👩‍💻 Author
 
 **Trishna Bhowmik**
 
-- GitHub: https://github.com/YOUR_USERNAME
-- LinkedIn: https://linkedin.com/in/YOUR_PROFILE
+B.Tech in Computational Mathematics
+
+AI | Full Stack Development | Backend Engineering | Generative AI
+
+GitHub: https://github.com/YOUR_USERNAME
+
+LinkedIn: https://linkedin.com/in/YOUR_LINKEDIN
 
 ---
 
-⭐ If you found this project helpful, consider giving it a star!
+If you like this project, consider giving it a ⭐ on GitHub.
