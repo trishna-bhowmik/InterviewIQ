@@ -1,0 +1,139 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum InterviewType {
+  HR
+  TECHNICAL
+  DSA
+  SYSTEM_DESIGN
+  BEHAVIORAL
+}
+
+enum Difficulty {
+  EASY
+  MEDIUM
+  HARD
+}
+
+enum InterviewStatus {
+  SCHEDULED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum QuestionType {
+  TEXT
+  CODING
+  MCQ
+}
+
+model User {
+  id String @id @default(cuid())
+
+  fullName String
+  email    String @unique
+  password String
+
+  avatar String?
+
+  role Role @default(USER)
+
+  isVerified Boolean @default(false)
+
+  lastLoginAt DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  resumes Resume[]
+
+  interviews Interview[]
+}
+
+model Resume {
+  id String @id @default(cuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  originalName String
+  filename     String
+  mimeType     String
+  size         Int
+  path         String
+
+  extractedText String?
+
+  createdAt DateTime @default(now())
+
+  interviews Interview[]
+}
+
+model Interview {
+  id String @id @default(cuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  resumeId String
+  resume   Resume @relation(fields: [resumeId], references: [id])
+
+  title String
+
+  description String? @db.Text
+
+  type InterviewType
+
+  difficulty Difficulty
+
+  duration Int
+
+  status InterviewStatus @default(SCHEDULED)
+
+  questions Json
+
+  score Float?
+
+  feedback String? @db.Text
+
+  createdAt DateTime @default(now())
+
+  updatedAt DateTime @updatedAt
+
+  answers Answer[]
+}
+
+model Answer {
+  id String @id @default(cuid())
+
+  interviewId String
+
+  interview Interview @relation(fields: [interviewId], references: [id], onDelete: Cascade)
+
+  question String @db.Text
+
+  answer String @db.Text
+
+  score Float?
+
+  feedback String? @db.Text
+
+  createdAt DateTime @default(now())
+}
