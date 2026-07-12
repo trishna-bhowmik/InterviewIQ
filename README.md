@@ -339,9 +339,9 @@ B.Tech in Computational Mathematics
 
 AI | Full Stack Development | Backend Engineering | Generative AI
 
-GitHub: https://github.com/YOUR_USERNAME
+GitHub: https://github.com/trishna-bhowmik
 
-LinkedIn: https://linkedin.com/in/YOUR_LINKEDIN
+LinkedIn: www.linkedin.com/in/trishna-bhowmik-50286725b
 
 ---
 
