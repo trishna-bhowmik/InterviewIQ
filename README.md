@@ -1,159 +1,238 @@
-# Turborepo starter
+# 🚀 InterviewIQ
 
-This Turborepo starter is maintained by the Turborepo core team.
+> **AI-Powered Mock Interview Platform**
 
-## Using this example
+Practice smarter. Interview confidently.
 
-Run the following command:
+InterviewIQ is a full-stack AI-powered mock interview platform that helps candidates prepare for technical and HR interviews by analyzing resumes, generating personalized interview questions, evaluating answers, and providing intelligent feedback.
 
-```sh
-npx create-turbo@latest
+---
+
+## ✨ Features
+
+- 🔐 JWT Authentication with Refresh Tokens
+- 📄 Resume Upload & PDF Parsing
+- 🤖 AI Resume Analysis
+- 💬 AI Interview Question Generation
+- 🎯 Personalized Mock Interviews
+- 📊 AI Answer Evaluation & Scoring
+- 📈 Dashboard Analytics
+- 📚 Interview History
+- 👤 User Profile
+- 📱 Responsive Modern UI
+
+---
+
+## 🖥️ Tech Stack
+
+### Frontend
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- React Query
+- Axios
+
+### Backend
+
+- Node.js
+- Express.js
+- Prisma ORM
+- PostgreSQL
+- JWT Authentication
+
+### AI
+
+- OpenAI / Gemini API
+- Resume Analysis
+- Interview Question Generation
+- AI Feedback Generation
+
+### DevOps
+
+- Turborepo
+- pnpm
+- GitHub
+- Railway *(Deployment)*
+- Vercel *(Deployment)*
+- Neon PostgreSQL
+
+---
+
+## 🏗️ System Architecture
+
+```
+                 ┌───────────────────────┐
+                 │      Next.js UI       │
+                 └──────────┬────────────┘
+                            │
+                            │ HTTPS
+                            ▼
+                 ┌───────────────────────┐
+                 │   Express Gateway     │
+                 └──────────┬────────────┘
+                            │
+        ┌───────────────────┼───────────────────┐
+        ▼                   ▼                   ▼
+ PostgreSQL            AI Service          Resume Parser
+   Prisma         (OpenAI / Gemini)           PDF
 ```
 
-## What's inside?
+---
 
-This Turborepo includes the following packages/apps:
+## 🔄 Application Workflow
 
-### Apps and Packages
+```
+User
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+↓
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+Login
 
-### Utilities
+↓
 
-This Turborepo has some additional tools already setup for you:
+Upload Resume
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+↓
 
-### Build
+Extract Resume Text
 
-To build all apps and packages, run the following command:
+↓
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
+AI Resume Analysis
 
-```sh
-cd my-turborepo
-turbo build
+↓
+
+Generate Interview Questions
+
+↓
+
+Start Interview
+
+↓
+
+Submit Answers
+
+↓
+
+AI Evaluation
+
+↓
+
+Score + Feedback
+
+↓
+
+Interview History
 ```
 
-Without global `turbo`, use your package manager:
+---
 
-```sh
-cd my-turborepo
-npx turbo build
-pnpm dlx turbo build
-pnpm exec turbo build
+## 📂 Folder Structure
+
+```text
+InterviewIQ
+│
+├── apps
+│   ├── gateway          # Backend API
+│   ├── web              # Next.js Frontend
+│
+├── docs                 # Documentation
+│
+├── infrastructure       # Deployment configs
+│
+├── package.json
+├── pnpm-workspace.yaml
+└── turbo.json
 ```
 
-You can build a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+---
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
+## ⚙️ Installation
 
-```sh
-turbo build --filter=docs
+Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/InterviewIQ.git
 ```
 
-Without global `turbo`:
+Move into the project
 
-```sh
-npx turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
+```bash
+cd InterviewIQ
 ```
 
-### Develop
+Install dependencies
 
-To develop all apps and packages, run the following command:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
-
-```sh
-cd my-turborepo
-turbo dev
+```bash
+pnpm install
 ```
 
-Without global `turbo`, use your package manager:
+Create environment variables
 
-```sh
-cd my-turborepo
-npx turbo dev
-pnpm exec turbo dev
-pnpm exec turbo dev
+```bash
+cp .env.example .env
 ```
 
-You can develop a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+Run the project
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
-
-```sh
-turbo dev --filter=web
+```bash
+pnpm dev
 ```
 
-Without global `turbo`:
+Frontend
 
-```sh
-npx turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
+```
+http://localhost:3000
 ```
 
-### Remote Caching
+Backend
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
-
-```sh
-cd my-turborepo
-turbo login
+```
+http://localhost:4000
 ```
 
-Without global `turbo`, use your package manager:
+---
 
-```sh
-cd my-turborepo
-npx turbo login
-pnpm exec turbo login
-pnpm exec turbo login
+## 🔑 Environment Variables
+
+```env
+DATABASE_URL=
+
+JWT_ACCESS_SECRET=
+
+JWT_REFRESH_SECRET=
+
+ACCESS_TOKEN_EXPIRES_IN=15m
+
+REFRESH_TOKEN_EXPIRES_IN=7d
+
+OPENAI_API_KEY=
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+---
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+## 🚀 Future Improvements
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
+- 🎥 Video Interviews
+- 💻 Coding Interview Editor
+- 🧠 Adaptive AI Questioning
+- 📈 Advanced Analytics Dashboard
+- 🌙 Dark Mode
+- 📱 Mobile Application
+- 🌍 Multi-language Support
+- 🏆 Gamification & Achievements
 
-```sh
-turbo link
-```
+---
 
-Without global `turbo`:
+## 👩‍💻 Author
 
-```sh
-npx turbo link
-pnpm exec turbo link
-pnpm exec turbo link
-```
+**Trishna Bhowmik**
 
-## Useful Links
+- GitHub: https://github.com/YOUR_USERNAME
+- LinkedIn: https://linkedin.com/in/YOUR_PROFILE
 
-Learn more about the power of Turborepo:
+---
 
-- [Tasks](https://turborepo.dev/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.dev/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.dev/docs/reference/configuration)
-- [CLI Usage](https://turborepo.dev/docs/reference/command-line-reference)
+⭐ If you found this project helpful, consider giving it a star!
